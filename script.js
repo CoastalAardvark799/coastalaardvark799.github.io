@@ -1,14 +1,17 @@
 let slideIndex = 1;
 showSlides(slideIndex);
 
+// Function to move to the next slide
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
+// Function to move to a specific slide
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
+// Function to display the current slide
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
@@ -24,3 +27,11 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
+// Automatic slideshow function
+function autoSlide() {
+  plusSlides(1); // Move to the next slide
+}
+
+// Set the interval for automatic slideshow (e.g., every 3 seconds)
+setInterval(autoSlide, 3000);

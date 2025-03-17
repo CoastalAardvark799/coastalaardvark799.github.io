@@ -6,6 +6,9 @@
 
 </head>
 <body>
+	<!-- Floating Music Notes Container -->
+  <div id="floating-notes"></div>
+	
 	<div class="sections2">
 <div id="gradient1" class="header">
   <a href="#default" class="logo"><img src="Images/BBA-logo-noBG.png" width="100%" height="" alt="logo"/></a>
@@ -21,11 +24,88 @@
 	
 <div class="sections2">
   
-  <div class="hero">
-        <img src="Images/place holder.gif" alt="Hero Image" class="hero-image">
+  <div class="banner">
+    <img src="Images/Banner 1.png" alt="Banner Image 1" class="banner-image active">
+    <img src="Images/Banner 2.png" alt="Banner Image 2" class="banner-image">
+    <img src="Images/Banner 3.png" alt="Banner Image 3" class="banner-image">
+    <!--<a href="another-page.html" class="banner-button">Go to Another Page</a>-->
+  </div>
+<br>
+<style>
+	/* Reset default margin and padding */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Banner container */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+/* Banner images */
+.banner-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire banner */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Active image */
+.banner-image.active {
+  opacity: 1;
+}
+
+/* Banner button */
+.banner-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 10; /* Ensure the button is above the images */
+}
+
+.banner-button:hover {
+  background-color: #0056b3;
+}	
+</style>
+	
+<script>
+let currentIndex = 0;
+const images = document.querySelectorAll('.banner-image');
+const totalImages = images.length;
+
+function changeImage() {
+  // Remove the 'active' class from the current image
+  images[currentIndex].classList.remove('active');
+
+  // Increment the index and wrap around if necessary
+  currentIndex = (currentIndex + 1) % totalImages;
+
+  // Add the 'active' class to the next image
+  images[currentIndex].classList.add('active');
+}
+
+// Change the image every 5 seconds
+setInterval(changeImage, 3000);
+
+</script>
         <a href="Baked By Alyssa-Contact Page.html" class="hero-button">Order Now</a>
     </div>
-</div>
+
 	
 <div class="sections2">
 
@@ -122,5 +202,48 @@ Terms and Conditions</p>
 	<br>
 	<p>lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, lori ipsum, </p></center>
 </footer>
+ <style>
+        .note {
+            position: fixed;
+            bottom: -50px; 
+            font-size: 2rem;
+            animation: floatUp linear;
+        }
+
+        @keyframes floatUp {
+            to {
+                transform: translateY(-100vh); 
+            }
+        }
+    </style>
+    <script>
+        function createNote() {
+            const note = document.createElement("div");
+            note.classList.add("note");
+            note.textContent = "🎂"; // Music note emoji
+
+            // Randomly choose between left and right side
+            const isLeftSide = Math.random() < 0.5; // 50% chance for left or right
+
+            if (isLeftSide) {
+                // Restrict to the left 20% of the screen
+                note.style.left = `${Math.random() * 20}vw`; // Random position within left 20%
+            } else {
+                // Restrict to the right 20% of the screen
+                note.style.right = `${Math.random() * 20}vw`; // Random position within right 20%
+            }
+
+            note.style.animationDuration = `${Math.random() * 3 + 5}s`; // Random speed
+            document.getElementById("floating-notes").appendChild(note);
+
+            // Remove the note after it finishes animating
+            note.addEventListener("animationend", () => {
+                note.remove();
+            });
+        }
+
+        // Create notes at regular intervals
+        setInterval(createNote, 200); // Adjust interval for more/less notes
+    </script>
 </body>
 </html>
