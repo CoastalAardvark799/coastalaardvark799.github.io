@@ -20,13 +20,26 @@
 	<a href="Baked By Alyssa-Baked Page.html">Baked<br>Goods</a>
 	<a class="active" href="Baked By Alyssa-Contact Page.html">Contact</a>
   </div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <script>
+   function toggleMenu() {
+  const headerRight = document.querySelector('.header-right');
+  headerRight.classList.toggle('active');
+}
+  </script>
+  
 </div>
 </div><br>
 	
 	<section class="contact">
 		<div class="content">
 			<h2>Contact Me</h2>
-			<p>Contact me through my provided social media link </p>
+			
 		</div>
 		<div class="container">
 			<div class="contactInfo">
@@ -34,7 +47,7 @@
 					<div class="icon"><i class="fa-solid fa-map"></i></div>
 					<div class="text">
 						<h3>Location:</h3>
-						<p>Contact Me for Address</p>
+						<p>North Stockton CA,</p>
 					</div>
 				</div>
 				<div class="box">
@@ -60,11 +73,12 @@
 				</div>
 			</div>
 			<div class="contactForm">
-				<form>
+				<form action="https://formspree.io/f/movevgkr"
+				method="POST">
 					<h2>Send Message</h2>
 					<div class="inputBox">
-						<form action="/action_page.php">
-						  <label for="Treats">Choose a Treat to order:</label>
+						
+						  <label for="Treats">Choose a treat to order:</label>
 						  <select name="Treats" id="Treats" required="required">
 							 <option value="None">None</option>
 							<option value="Chocolate covered Strawberries">Chocolate covered Strawberries</option>
@@ -87,26 +101,26 @@
 							<option value="Cupcakes">Cupcakes</option>
 							  <option value="Mini Cupcakes">Mini Cupcakes</option>
 						  </select>
-						</form>
+			
 					</div>
 					<div class="inputBox">
-						<input type="text" name="" required="required">
+						<input type="text" name="Name" required="required">
 						<span>Full Name</span>
 					</div>
 					<div class="inputBox">
-						<input type="text" name="" required="required">
-						<span>Email</span>
+						<input type="text" name="Instagram" required="required">
+						<span>Instagram:</span>
 					</div>
 					<div class="inputBox">
-						<input type="text" name="" required="required">
+						<input type="text" name="Phone Number" required="required">
 						<span>Phone Number:</span>
 					</div>
 					<div class="inputBox">
-						<textarea required="required"></textarea>
+						<textarea required="required" name="specifications" ></textarea>
 						<span>Type the specifications for your desired treat <b>(Color/Filling/Amount)</b></span>
 					</div>
 					<div class="inputBox">
-						<textarea required="required"></textarea>
+						<textarea required="required" name="Dietary Restriction"></textarea>
 						<span><b>Please list dietary restriction if applicable (If no please type N/A):</b></span>
 					</div>
 					<div class="inputBox">

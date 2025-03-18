@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" href="styles.css">
 	<script src="script.js"></script>
-
+	<meta charset="utf-8">
 </head>
 <body>
 	<!-- Floating Music Notes Container -->
@@ -19,7 +19,22 @@
 	<a href="Baked By Alyssa-Baked Page.html">Baked<br>Goods</a>
 	<a href="Baked By Alyssa-Contact Page.html">Contact</a>
   </div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <script>
+   function toggleMenu() {
+  const headerRight = document.querySelector('.header-right');
+  headerRight.classList.toggle('active');
+}
+  </script>
+
 </div>
+
+
 	</div>
 	
 <div class="sections2">
@@ -102,21 +117,30 @@ function changeImage() {
 // Change the image every 5 seconds
 setInterval(changeImage, 3000);
 
+function changeImage() {
+  images[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % totalImages;
+  images[currentIndex].classList.add('active');
+}
+
+setInterval(changeImage, 3000);
+
 </script>
+
         <a href="Baked By Alyssa-Contact Page.html" class="hero-button">Order Now</a>
     </div>
 
 	
 <div class="sections2">
-
+<font size="+4"><b><center>Keep an eye out for monthly flash sales!!!</center></b></font><br>
 <div class="image-container">
 
 <div class="image">
-	<img class="image__img" src="Images/Choco-flan-removebg.png" alt="flan"/> 
+	<img class="image__img" src="Images/mini cakes.jpg" alt="mini cakes"/> 
 	<div class="image__overlay image__overlay--blur">
-		<div class="image__title">Choco-Flan</div>
+		<div class="image__title">Mini Cakes</div>
 		<p class="image__description">
-			Here we have a Delicious Choco Flan!
+			Mini versions of my most popular cake flavors
 		</p>
 	</div>
 </div>
@@ -129,11 +153,11 @@ setInterval(changeImage, 3000);
 <div class="image-container">
 
 <div class="image">
-	<img class="image__img" src="Images/cheesecake bites-togther.jpeg" alt="flan"/> 
+	<img class="image__img" src="Images/dubi cheesecake cups.jpg" alt="flan"/> 
 	<div class="image__overlay image__overlay--blur">
-		<div class="image__title">Choco-Flan</div>
+		<div class="image__title">Dubai Chocolate Cheesecakes</div>
 		<p class="image__description">
-			Here we have a Delicious Choco Flan!
+			A combination of the viral dubai chocolate bar and my classic cheesecake recipe
 		</p>
 	</div>
 </div>
@@ -146,28 +170,11 @@ setInterval(changeImage, 3000);
 <div class="image-container">
 
 <div class="image">
-	<img class="image__img" src="Images/fruit star.jpeg" alt="flan"/> 
+	<img class="image__img" src="Images/cheesecake slice.jpg" alt="flan"/> 
 	<div class="image__overlay image__overlay--blur">
-		<div class="image__title">Choco-Flan</div>
+		<div class="image__title">Cheesecake Slices</div>
 		<p class="image__description">
-			Here we have a Delicious Choco Flan!
-		</p>
-	</div>
-</div>
-</div>
-	
-</div><br><br><br><br><br><br><br>
-	
-<div class="sections2">
-
-<div class="image-container">
-
-<div class="image">
-	<img class="image__img" src="Images/choco-chip-cookies.jpeg" alt="flan"/> 
-	<div class="image__overlay image__overlay--blur">
-		<div class="image__title">Choco-Flan</div>
-		<p class="image__description">
-			Here we have a Delicious Choco Flan!
+			Individual slices of gourmet cheesecake
 		</p>
 	</div>
 </div>
@@ -175,22 +182,6 @@ setInterval(changeImage, 3000);
 	
 </div>
 	
-<div class="sections2">
-
-<div class="image-container">
-
-<div class="image">
-	<img class="image__img" src="Images/cupcakes plain.jpeg" alt="flan"/> 
-	<div class="image__overlay image__overlay--blur">
-		<div class="image__title">Choco-Flan</div>
-		<p class="image__description">
-			Here we have a Delicious Choco Flan!
-		</p>
-	</div>
-</div>
-</div>
-	
-</div>
 	
 	
 <footer class="footer"><center><p><br>
@@ -215,7 +206,7 @@ BakedByAlyssaaa @2025 all rights reserved.</p><img src="Images/current_logo-remo
         function createNote() {
             const note = document.createElement("div");
             note.classList.add("note");
-            note.textContent = "Cake"; // Music note emoji
+            note.textContent = "🎂"; // Music note emoji
 
             // Randomly choose between left and right side
             const isLeftSide = Math.random() < 0.5; // 50% chance for left or right
