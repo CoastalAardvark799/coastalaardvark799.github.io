@@ -637,7 +637,7 @@ img {vertical-align: middle;}
 .aboutText .learnMore:hover {
 	background-color: #3e8e41;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 414px) {
 	.heading {
 		padding: 0px 20px;
 	}
@@ -676,7 +676,7 @@ img {vertical-align: middle;}
 
 /* Mobile stuff */
 
-@media (max-width: 768px) {
+@media (max-width: 414px) {
 	.header {
 	  display: flex;
 	  justify-content: space-between; /* Space out logo and hamburger */
@@ -725,7 +725,7 @@ img {vertical-align: middle;}
 	}
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 414px) {
 	.banner {
 	  height: 50vh; /* Reduce height for mobile */
 	}
@@ -734,7 +734,7 @@ img {vertical-align: middle;}
 	}
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 414px) {
 	.image-container {
 	  flex-direction: column;
 	  height: auto;
@@ -745,7 +745,7 @@ img {vertical-align: middle;}
 	}
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 414px) {
 	body {
 	  font-size: 14px;
 	}
@@ -757,7 +757,7 @@ img {vertical-align: middle;}
 	}
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 414px) {
 	.footer img {
 	  width: 20%;
 	}
