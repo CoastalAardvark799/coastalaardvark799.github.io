@@ -32,7 +32,6 @@ body {
 .header {
   overflow: hidden;
   background-color: #FDB0C0;
-  padding: 13px 10px;
   margin-bottom: 10px;
   position: fixed;
   width: 100%;
@@ -54,7 +53,15 @@ body {
   line-height: 15px;
   border-radius: 4px;
 }
-
+.BIGNAME {
+		 margin-top: 5px; 
+	  }
+.BIGNAME2 {
+		 margin-top: 5px; 
+	  }
+.BIGNAME3 {
+		 margin-top: 5px; 
+	  }
 .header a.logo {
  width: 220px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
@@ -853,4 +860,13 @@ img {vertical-align: middle;}
 	  padding: 0; /* Remove padding if necessary */
 	  margin: 0; /* Remove margins if necessary */ /* Remove margins if necessary */
 	}
+	  .BIGNAME {
+		 margin-top: 20%; 
+	  }
+	  .BIGNAME2 {
+		 margin-top: 5%; 
+	  }
+	  .BIGNAME3 {
+		 margin-top: 10%; 
+	  }
   }
